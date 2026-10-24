@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberSafe Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header id="home">
+    <h1>🛡️ CyberSafe Hub</h1>
+    <p>Learn cyber safety. Stay smart. Stay safe.</p>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#learn">Learn</a>
+      <a href="#safety-tips">Safety Tips</a>
+      <a href="#password-safety">Password Safety</a>
+      <a href="#url-checker">URL Checker</a>
+      <a href="#safety-toolkit">Safety Toolkit</a>
+      <a href="#quiz">Quiz</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="welcome-section">
+      <h2>Welcome to CyberSafe Hub!</h2>
+      <p>Learn how to protect yourself from online threats.</p>
+
+      <button type="button" onclick="startLearning()">
+        Start Learning 🚀
+      </button>
+
+      <p id="message"></p>
+    </section>
+
+    <section class="search-section">
+      <h2>🔍 Search Cyber Safety Topics</h2>
+
+      <input
+        type="text"
+        id="searchBox"
+        placeholder="Search phishing, passwords..."
+        oninput="searchTopics()"
+      >
+
+      <p id="noResults" hidden>No matching topics found.</p>
+    </section>
+
+    <section id="learn" class="card">
+      <h2>📧 Phishing Awareness</h2>
+      <p>
+        Phishing is a trick used to steal personal information
+        through fake emails, messages, or websites.
+      </p>
+
+      <ul>
+        <li>Check the sender's email address.</li>
+        <li>Be careful with urgent messages.</li>
+        <li>Verify links before opening them.</li>
+        <li>Never share passwords or OTPs.</li>
+      </ul>
+    </section>
+
+    <section id="safety-tips" class="card">
+      <h2>🔐 How to Spot Phishing</h2>
+      <ul>
+        <li>Look for spelling mistakes.</li>
+        <li>Be careful with unexpected prizes.</li>
+        <li>Verify suspicious links.</li>
+        <li>Do not download unknown attachments.</li>
+      </ul>
+    </section>
+
+    <section id="password-safety" class="card">
+      <h2>🔑 Password Safety</h2>
+      <ul>
+        <li>Use strong, unique passwords.</li>
+        <li>Never share your password.</li>
+        <li>Enable two-factor authentication.</li>
+        <li>Do not reuse the same password everywhere.</li>
+      </ul>
+    </section>
+
+    <!-- Password Strength Checker -->
+    <section id="password-checker" class="card">
+      <h2>🔐 Password Strength Checker</h2>
+
+      <p>
+        Check the strength of a sample password.
+        Never enter your real password here.
+      </p>
+
+      <label for="strengthPassword">
+        Enter a sample password:
+      </label>
+
+      <input
+        type="password"
+        id="strengthPassword"
+        placeholder="Try a sample password"
+        autocomplete="off"
+        aria-describedby="strengthResult"
+      >
+
+      <button type="button" id="togglePassword">
+        Show Password
+      </button>
+
+      <p id="strengthResult" aria-live="polite">
+        Strength: Not checked yet
+      </p>
+
+      <ul>
+        <li>Use at least 12 characters.</li>
+        <li>Use uppercase and lowercase letters.</li>
+        <li>Include numbers and symbols.</li>
+        <li>Use a unique password for each account.</li>
+      </ul>
+    </section>
+    <!-- End Password Strength Checker -->
+
+    <!-- Suspicious URL Checker -->
+    <section id="url-checker" class="card">
+      <h2>🌐 Suspicious URL Checker</h2>
+
+      <p>
+        Check a link for common warning signs before opening it.
+      </p>
+
+      <p>
+        This tool checks basic URL patterns only.
+        It cannot guarantee that a website is safe.
+      </p>
+
+      <label for="urlInput">Enter a sample URL:</label>
+
+      <input
+        type="text"
+        id="urlInput"
+        placeholder="https://example.com"
+        autocomplete="off"
+        spellcheck="false"
+        aria-describedby="urlResult"
+      >
+
+      <button type="button" id="checkUrlButton">
+        Check URL 🔍
+      </button>
+
+      <button type="button" id="clearUrlButton">
+        Clear
+      </button>
+
+      <div id="urlResult" aria-live="polite">
+        <p>URL check result will appear here.</p>
+      </div>
+
+      <h3>⚠️ Warning Signs to Remember</h3>
+
+      <ul>
+        <li>Unexpected links asking for passwords or OTPs.</li>
+        <li>Misspelled or unusual domain names.</li>
+        <li>Links containing misleading symbols or addresses.</li>
+        <li>HTTPS alone does not prove a website is trustworthy.</li>
+      </ul>
+    </section>
+    <!-- End Suspicious URL Checker -->
+
+    <!-- Cyber Safety Toolkit -->
+    <section id="safety-toolkit" class="card">
+      <h2>🧰 Cyber Safety Toolkit</h2>
+      <p>Simple habits to protect yourself online.</p>
+
+      <div class="toolkit-item">
+        <h3>🔐 OTP & Two-Factor Authentication</h3>
+        <ul>
+          <li>Never share your OTP with anyone.</li>
+          <li>Never approve an unexpected login request.</li>
+          <li>Enable two-factor authentication on important accounts.</li>
+          <li>Use an authenticator app or passkey when supported.</li>
+        </ul>
+      </div>
+
+      <div class="toolkit-item">
+        <h3>📶 Public Wi-Fi Safety</h3>
+        <ul>
+          <li>Confirm the correct Wi-Fi network with the venue.</li>
+          <li>Avoid sensitive transactions on untrusted networks.</li>
+          <li>Use HTTPS websites and keep your device updated.</li>
+          <li>Turn off automatic connection to unknown networks.</li>
+        </ul>
+      </div>
+
+      <div class="toolkit-item">
+        <h3>✅ Daily Cyber Safety Checklist</h3>
+
+        <label class="toolkit-check">
+          <input type="checkbox">
+          I use strong, unique passwords.
+        </label>
+
+        <label class="toolkit-check">
+          <input type="checkbox">
+          I never share OTPs or passwords.
+        </label>
+
+        <label class="toolkit-check">
+          <input type="checkbox">
+          I check links before opening them.
+        </label>
+
+        <label class="toolkit-check">
+          <input type="checkbox">
+          I keep my apps and device updated.
+        </label>
+
+        <label class="toolkit-check">
+          <input type="checkbox">
+          I enable 2FA on important accounts.
+        </label>
+      </div>
+    </section>
+    <!-- End Cyber Safety Toolkit -->
+
+    <!-- Cyber Safety Quiz -->
+    <section id="quiz" class="card quiz-section">
+      <h2>🎮 Cyber Safety Challenge</h2>
+      <p>Test your cyber safety knowledge!</p>
+
+      <div id="quizGame">
+        <p id="questionNumber">Question 1 of 10</p>
+
+        <h3 id="question">
+          Unknown person nee OTP adigithe em chesthav?
+        </h3>
+
+        <div id="questionImage" hidden>
+          <img
+            id="quizImage"
+            src=""
+            alt="Cyber safety question picture"
+          >
+        </div>
+
+        <div id="answerButtons">
+          <button type="button">A. OTP share chestha</button>
+          <button type="button">B. OTP share cheyyanu</button>
+          <button type="button">C. OTP ni friend ki pampistha</button>
+        </div>
+
+        <p id="quizResult" aria-live="polite"></p>
+        <p id="scoreDisplay">Score: 0 / 10</p>
+
+        <button type="button" id="nextButton" hidden>
+          NEXT ➡️
+        </button>
+      </div>
+
+      <div id="celebrationScreen" hidden>
+        <h2 id="celebrationTitle">🎉 Quiz Completed!</h2>
+        <p id="celebrationMessage"></p>
+
+        <div id="celebrationCharacters" class="celebration-stage">
+          <div class="character shinchan-character">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMa--67Zx5-8Wbe1u6Z38DYntOx-LFbfP2RnY8acA9EFrfbGs9kyUIFehp&s=10"
+              alt="Shinchan celebration character"
+              loading="lazy"
+            >
+            <p>Shinchan 🎉</p>
+          </div>
+
+          <div class="character doraemon-character">
+            <img
+              src="https://www.pngitem.com/pimgs/m/46-462319_download-doraemon-png-file-doraemon-characters-png-transparent.png"
+              alt="Doraemon celebration character"
+              loading="lazy"
+            >
+            <p>Doraemon 🎊</p>
+          </div>
+        </div>
+
+        <p id="celebrationScore"></p>
+
+        <button type="button" id="celebrationNextButton">
+          NEXT ➡️
+        </button>
+      </div>
+
+      <div id="finalScoreScreen" hidden>
+        <h2>🏆 Your Final Result</h2>
+        <p id="finalScore"></p>
+        <p id="finalMessage"></p>
+
+        <button type="button" id="restartButton" hidden>
+          RESTART QUIZ 🔄
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>🛡️ CyberSafe Hub | Stay Alert. Stay Safe.</p>
+    <p>Educational project for learning cyber safety.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
