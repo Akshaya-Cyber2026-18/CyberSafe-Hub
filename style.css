@@ -1,0 +1,723 @@
+ /* ===== 1. Basic Website Style ===== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b1120;
+  color: #f1f5f9;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.3;
+}
+
+p {
+  margin-top: 10px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid #facc15;
+  outline-offset: 3px;
+}
+
+/* ===== 2. Header ===== */
+header {
+  background: linear-gradient(135deg, #111827, #164e63);
+  padding: 30px 20px;
+  text-align: center;
+  border-bottom: 2px solid #00ffcc;
+}
+
+header h1 {
+  color: #00ffcc;
+  font-size: 36px;
+  margin: 0 0 8px;
+}
+
+header p {
+  color: #cbd5e1;
+  margin: 0 0 20px;
+}
+
+/* ===== 3. Navigation ===== */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+nav a {
+  color: #f8fafc;
+  text-decoration: none;
+  background: #172033;
+  padding: 10px 16px;
+  border: 1px solid #00bfa6;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: #00bfa6;
+  color: #06121a;
+}
+
+/* ===== 4. Main Content ===== */
+main {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 22px;
+}
+
+/* ===== 5. Welcome Section ===== */
+.welcome-section {
+  background: linear-gradient(135deg, #172554, #164e63);
+  text-align: center;
+  padding: 35px 20px;
+  border-radius: 16px;
+  border: 1px solid #00bfa6;
+  margin-bottom: 25px;
+}
+
+.welcome-section h2 {
+  color: #00ffcc;
+  font-size: 28px;
+}
+
+.welcome-section p {
+  color: #e2e8f0;
+}
+
+.welcome-section button {
+  background: #00ffcc;
+  color: #06121a;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 22px;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.welcome-section button:hover {
+  background: #5eead4;
+}
+
+#message {
+  color: #00ffcc;
+  font-weight: bold;
+}
+
+/* ===== 6. Search Section ===== */
+.search-section {
+  text-align: center;
+  margin: 25px 0;
+  padding: 25px 20px;
+  background: #111c30;
+  border: 1px solid #26364e;
+  border-radius: 14px;
+}
+
+.search-section h2 {
+  color: #00ffcc;
+}
+
+#searchBox {
+  width: 100%;
+  max-width: 500px;
+  padding: 13px 15px;
+  border: 2px solid #00bfa6;
+  border-radius: 9px;
+  background: #0b1120;
+  color: #ffffff;
+  outline: none;
+}
+
+#searchBox::placeholder {
+  color: #94a3b8;
+}
+
+#searchBox:focus {
+  border-color: #00ffcc;
+  box-shadow: 0 0 10px #00bfa633;
+}
+
+#noResults {
+  color: #facc15;
+  font-weight: bold;
+}
+
+/* ===== 7. Information Cards ===== */
+.card {
+  background: #111c30;
+  padding: 25px;
+  margin: 25px 0;
+  border: 1px solid #26364e;
+  border-left: 4px solid #00ffcc;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px #00000025;
+}
+
+.card h2 {
+  color: #00ffcc;
+  margin-top: 0;
+}
+
+.card h3 {
+  color: #67e8f9;
+}
+
+.card p,
+.card li {
+  color: #dbe4f0;
+}
+
+.card li {
+  margin-bottom: 8px;
+}
+
+.card ul {
+  padding-left: 24px;
+}
+
+/* ===== 8. Quiz Section ===== */
+.quiz-section {
+  text-align: center;
+}
+
+#quizGame {
+  margin-top: 20px;
+}
+
+#questionNumber {
+  display: inline-block;
+  background: #172554;
+  color: #67e8f9;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+#question {
+  color: #ffffff;
+  margin: 22px 0;
+  font-size: 23px;
+}
+
+/* ===== 9. Quiz Answer Buttons ===== */
+#answerButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 650px;
+  margin: 20px auto;
+}
+
+#answerButtons button {
+  width: 100%;
+  padding: 14px 16px;
+  background: #1e293b;
+  color: #f8fafc;
+  border: 1px solid #475569;
+  border-radius: 10px;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+#answerButtons button:hover {
+  background: #26364e;
+  border-color: #00ffcc;
+}
+
+/* Correct answer turns green */
+#answerButtons button.correct-answer {
+  background: #166534;
+  color: #ffffff;
+  border: 2px solid #4ade80;
+}
+
+/* Wrong selected answer turns red */
+#answerButtons button.wrong-answer {
+  background: #991b1b;
+  color: #ffffff;
+  border: 2px solid #f87171;
+}
+
+/* ===== 10. Quiz Feedback and Score ===== */
+#quizResult {
+  max-width: 700px;
+  margin: 18px auto;
+  padding: 12px;
+  border-radius: 9px;
+  color: #f8fafc;
+  overflow-wrap: anywhere;
+}
+
+#scoreDisplay {
+  color: #00ffcc;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 18px 0;
+}
+
+#nextButton,
+#celebrationNextButton,
+#restartButton {
+  background: #00ffcc;
+  color: #06121a;
+  border: none;
+  border-radius: 9px;
+  padding: 12px 22px;
+  font-weight: bold;
+  margin: 12px 5px;
+}
+
+#nextButton:hover,
+#celebrationNextButton:hover,
+#restartButton:hover {
+  background: #5eead4;
+}
+
+/* ===== 11. Quiz Question Images ===== */
+#questionImage {
+  margin: 18px auto;
+  max-width: 500px;
+}
+
+#quizImage {
+  display: block;
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border: 2px solid #00bfa6;
+  border-radius: 12px;
+  background: #172033;
+}
+
+/* ===== 12. Celebration Screen ===== */
+#celebrationScreen {
+  text-align: center;
+  padding-top: 15px;
+}
+
+#celebrationTitle {
+  color: #facc15;
+  font-size: 28px;
+}
+
+#celebrationMessage {
+  color: #e2e8f0;
+  font-size: 18px;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+#celebrationScore {
+  color: #00ffcc;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+/* ===== 13. Shinchan and Doraemon Celebration Stage ===== */
+.celebration-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 12px;
+  min-height: 230px;
+  overflow: hidden;
+  padding: 25px 8px;
+  margin: 20px 0;
+  border: 1px solid #00bfa6;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    #172554,
+    #3b0764,
+    #164e63
+  );
+}
+
+.celebration-stage .character {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.celebration-stage .character img {
+  display: block;
+  width: 100%;
+  max-width: 145px;
+  aspect-ratio: 1;
+  object-fit: contain;
+  margin: 0 auto;
+  border: 2px solid #00ffcc;
+  border-radius: 18px;
+  background: #172033;
+}
+
+.celebration-stage .character p {
+  color: #ffffff;
+  font-weight: bold;
+  margin: 8px 0 0;
+}
+
+.highfive-spark {
+  position: absolute;
+  z-index: 3;
+  top: 38%;
+  left: 50%;
+  font-size: 30px;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.3);
+  pointer-events: none;
+}
+
+.celebration-confetti {
+  position: absolute;
+  z-index: 1;
+  inset: 8px;
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 8px;
+  pointer-events: none;
+  overflow-wrap: anywhere;
+}
+
+.celebration-caption {
+  text-align: center;
+  color: #00ffcc;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Animation starts when JavaScript adds celebrate-now */
+.celebration-stage.celebrate-now .shinchan-character {
+  animation: shinchanCelebrate 3s ease-in-out infinite;
+}
+
+.celebration-stage.celebrate-now .doraemon-character {
+  animation: doraemonCelebrate 3s ease-in-out infinite;
+}
+
+.celebration-stage.celebrate-now .highfive-spark {
+  animation: highfivePop 3s ease-in-out infinite;
+}
+
+.celebration-stage.celebrate-now .celebration-confetti {
+  animation: confettiDance 2s ease-in-out infinite alternate;
+}
+
+/* Character movement */
+@keyframes shinchanCelebrate {
+  0%, 100% {
+    transform: translateX(-8px) rotate(-5deg);
+  }
+
+  25% {
+    transform: translateX(24px) rotate(8deg) scale(1.05);
+  }
+
+  45% {
+    transform: translateX(12px) rotate(-5deg);
+  }
+
+  70% {
+    transform: translateX(-5px) rotate(360deg);
+  }
+}
+
+@keyframes doraemonCelebrate {
+  0%, 100% {
+    transform: translateX(8px) rotate(5deg);
+  }
+
+  25% {
+    transform: translateX(-24px) rotate(-8deg) scale(1.05);
+  }
+
+  45% {
+    transform: translateX(-12px) rotate(5deg);
+  }
+
+  70% {
+    transform: translateX(5px) rotate(-360deg);
+  }
+}
+
+/* High-five sparkle effect */
+@keyframes highfivePop {
+  0%, 15%, 65%, 100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+
+  25%, 45% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.3);
+  }
+}
+
+/* Confetti movement */
+@keyframes confettiDance {
+  from {
+    transform: translateY(-5px) rotate(-5deg);
+  }
+
+  to {
+    transform: translateY(12px) rotate(5deg);
+  }
+}
+
+/* ===== 14. Final Score Screen ===== */
+#finalScoreScreen {
+  text-align: center;
+  padding: 25px 10px;
+}
+
+#finalScoreScreen h2 {
+  color: #facc15;
+  font-size: 27px;
+}
+
+#finalScore {
+  color: #00ffcc;
+  font-size: 36px;
+  margin: 15px 0;
+}
+
+#finalMessage {
+  color: #e2e8f0;
+  font-size: 18px;
+  overflow-wrap: anywhere;
+}
+
+/* ===== 15. Footer ===== */
+footer {
+  margin-top: 35px;
+  padding: 25px 15px;
+  text-align: center;
+  background: #070b14;
+  border-top: 2px solid #00bfa6;
+}
+
+footer p {
+  margin: 5px 0;
+  color: #94a3b8;
+}
+
+footer p:first-child {
+  color: #00ffcc;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* ===== 16. Mobile-Friendly Website ===== */
+@media (max-width: 600px) {
+  header {
+    padding: 22px 12px;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  header p {
+    font-size: 14px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  nav a {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+  }
+
+  main {
+    padding: 12px;
+  }
+
+  .welcome-section {
+    padding: 25px 14px;
+  }
+
+  .welcome-section h2 {
+    font-size: 23px;
+  }
+
+  .card {
+    padding: 17px;
+    margin: 18px 0;
+  }
+
+  .card h2 {
+    font-size: 21px;
+  }
+
+  #question {
+    font-size: 20px;
+  }
+
+  #answerButtons button {
+    padding: 13px;
+    font-size: 15px;
+  }
+
+  #quizImage {
+    max-height: 220px;
+  }
+
+  .celebration-stage {
+    gap: 5px;
+    min-height: 190px;
+    padding: 18px 5px;
+  }
+
+  .celebration-stage .character img {
+    max-width: 110px;
+  }
+
+  .celebration-stage .character p {
+    font-size: 13px;
+  }
+
+  .highfive-spark {
+    font-size: 25px;
+  }
+
+  .celebration-confetti {
+    font-size: 17px;
+    letter-spacing: 3px;
+  }
+
+  #celebrationTitle {
+    font-size: 24px;
+  }
+
+  #finalScore {
+    font-size: 30px;
+  }
+}
+
+/* ===== 17. Accessibility: Reduce Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .celebration-stage.celebrate-now * {
+    animation: none !important;
+  }
+
+  button {
+    transition: none;
+  }
+}
+/* ===== Cyber Safety Toolkit ===== */
+
+#safety-toolkit {
+  margin-top: 25px;
+  padding: 22px;
+  background: #111c30;
+  color: #f1f5f9;
+  border: 1px solid #00ffcc;
+  border-left: 4px solid #00ffcc;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px #00000025;
+}
+
+#safety-toolkit > h2 {
+  color: #00ffcc;
+  margin-top: 0;
+}
+
+#safety-toolkit .toolkit-item {
+  margin-top: 20px;
+  padding: 16px;
+  background: #0b1120;
+  border: 1px solid #26364e;
+  border-radius: 10px;
+}
+
+#safety-toolkit .toolkit-item h3 {
+  color: #67e8f9;
+  margin-top: 0;
+}
+
+#safety-toolkit .toolkit-item ul {
+  padding-left: 22px;
+  line-height: 1.9;
+}
+
+#safety-toolkit .toolkit-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 14px 0;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+#safety-toolkit .toolkit-check input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  accent-color: #00ffcc;
+  flex-shrink: 0;
+}
+
+#safety-toolkit .toolkit-check:has(input:checked) {
+  color: #00ffcc;
+}
+
+/* ===== Mobile Styling ===== */
+
+@media (max-width: 600px) {
+  #safety-toolkit {
+    padding: 14px;
+  }
+
+  #safety-toolkit .toolkit-item {
+    padding: 12px;
+  }
+}
+
+/* ===== End Cyber Safety Toolkit CSS ===== */
